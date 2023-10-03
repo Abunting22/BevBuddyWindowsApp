@@ -1,0 +1,47 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--Background Colors-->
+    <Color x:Key="primaryBackgroundColor1">#5B1707</Color>
+    <Color x:Key="primaryBackgroundColor2">#3A1F04</Color>
+    <Color x:Key="primaryBackgroundColor3">Black</Color>
+    <Color x:Key="secondaryBackgroundColor1">#793802</Color>
+    <Color x:Key="secondaryBackgroundColor2">#B3672B</Color>
+    <Color x:Key="secondaryBackgroundColor3">#954535</Color>
+
+    <!--Window Border-->
+    <Color x:Key="winBorderColor1">#5B1707</Color>
+    <Color x:Key="winBorderColor2">#A76D54</Color>
+    <Color x:Key="winBorderColor3">#883000</Color>
+    <Color x:Key="winBorderColor4">#A52A2A</Color>
+    <Color x:Key="winBorderColor5">#B76E79</Color>
+
+    <!--Color Palette-->
+    <SolidColorBrush x:Key="color1" Color="#C19552"/>
+    <SolidColorBrush x:Key="color2" Color="#7C615C"/>
+    <SolidColorBrush x:Key="color3" Color="#EB8B6E"/>
+    <SolidColorBrush x:Key="color4" Color="#D79334"/>
+    <SolidColorBrush x:Key="color5" Color="#CC7722"/>
+    <SolidColorBrush x:Key="color6" Color="#DBA520"/>
+    <SolidColorBrush x:Key="color7" Color="#FF7417"/>
+    <SolidColorBrush x:Key="color8" Color="#B1650F"/>
+    <SolidColorBrush x:Key="color9" Color="#9A463D"/>
+    <SolidColorBrush x:Key="color10" Color="#B76E79"/>
+
+
+    <!--Font Colors-->
+    <SolidColorBrush x:Key="titleColor1" Color="#813F0B"/>
+    <SolidColorBrush x:Key="titleColor2" Color="#A52A2A"/>
+    <SolidColorBrush x:Key="titleColor3" Color="#954535"/>
+    <SolidColorBrush x:Key="plainText1" Color="#F5F5DC"/>
+    <SolidColorBrush x:Key="plainText2" Color="#483C32"/>
+    <SolidColorBrush x:Key="plainText3" Color="#795C32"/>
+    
+    <!--Panel Colors-->
+    <SolidColorBrush x:Key="panelColor" Color="#2B1700"/>
+    <SolidColorBrush x:Key="panelOverColor" Color="#2B1700"/>
+    <SolidColorBrush x:Key="panelActiveColor" Color="#2B1700"/>
+    
+</ResourceDictionary>
+    
