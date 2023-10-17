@@ -9,6 +9,7 @@ using BevBuddyApp_v1._2_.Views;
 using Microsoft.Extensions.DependencyInjection;
 using BevBuddyApp_v1._2_.Repository;
 using BevBuddyApp_v1._2_.ViewModels;
+using BevBuddyApp_v1._2_.Models;
 
 namespace BevBuddyApp_v1._2_
 {
@@ -19,11 +20,14 @@ namespace BevBuddyApp_v1._2_
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<RepositoryBase>();
+            services.AddScoped<IUserRepository, UserRepository>();
         }
 
         protected void ApplicationStart(object sender, StartupEventArgs e)
-        {            
+        {
+            var services = new ServiceCollection();
+            ConfigureServices(services);
+
             var loginView = new LoginView();
 
             loginView.Show();

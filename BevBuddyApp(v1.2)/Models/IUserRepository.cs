@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BevBuddyApp_v1._2_.Models
 {
-    internal interface IUserRepository
+    public interface IUserRepository
     {
         bool AuthenticateUser(NetworkCredential credential);
         void Add(UserModel userModel);

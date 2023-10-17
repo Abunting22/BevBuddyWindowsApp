@@ -29,13 +29,13 @@ namespace BevBuddyApp_v1._2_.ViewModels
             NewUserCommand = new ViewModelCommand(ExecuteCreateUserCommand, CanExecuteNewUserCommand);
         }
 
-        public void ExecuteCreateUserCommand(object obj)
+        private void ExecuteCreateUserCommand(object obj)
         {
             UserRepository userRepository = new();
             userRepository.Add(NewUserModel);
         }
 
-        public bool CanExecuteNewUserCommand(object obj)
+        private bool CanExecuteNewUserCommand(object obj)
         {
             bool validData;
             if (string.IsNullOrWhiteSpace(NewUserModel.Username) ||

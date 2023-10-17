@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BevBuddyApp_v1._2_.Models
 {
-    interface IRepositoryStoredProcedures
+    interface IAccountsRepositoryStoredProcedures
     {
         void InsertNewAccount(UserModel userModel);
     }

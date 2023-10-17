@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BevBuddyApp_v1._2_.Repository
 {
-    class RepositoryStoredProcedures : RepositoryBase, IRepositoryStoredProcedures 
+    class AccountsRepositoryStoredProcedures : RepositoryBase, IAccountsRepositoryStoredProcedures 
     {
         public void InsertNewAccount(UserModel userModel)
         {

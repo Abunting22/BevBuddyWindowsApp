@@ -1,0 +1,145 @@
+﻿<UserControl x:Class="BevBuddyApp_v1._2_.Views.AddBetView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BevBuddyApp_v1._2_.Views"
+             xmlns:fonta="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             xmlns:viewModels="clr-namespace:BevBuddyApp_v1._2_.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    <UserControl.DataContext>
+        <viewModels:AddBetViewModel/>
+    </UserControl.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="500"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Width="250"
+                    Grid.Row="0"
+                    VerticalAlignment="Center">
+            
+            <TextBlock Text="New Bet"
+                       Foreground="White"
+                       Background="Transparent"
+                       FontSize="35"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Top"/>
+        </StackPanel>
+
+        <StackPanel Width="250"
+                    Grid.Row="1"
+                    VerticalAlignment="Top">
+            
+            <TextBlock Text="Bettor"
+                       Foreground="White"
+                       Background="Transparent"
+                       FontSize="15"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       HorizontalAlignment="Left"/>
+
+            <TextBox x:Name="txtUsername"
+                     Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
+                     Foreground="White"
+                     FontSize="15"
+                     FontWeight="Medium"
+                     FontFamily="Montserrat"
+                     Background="Transparent"
+                     CaretBrush="LightGray"
+                     BorderBrush="DarkGray"
+                     BorderThickness="0,0,0,1"
+                     Height="28"
+                     VerticalAlignment="Center"
+                     Margin="0,5,0,5"
+                     Padding="20,0,0,0"/>
+            
+            <TextBlock Text="Wager"
+                       Foreground="White"
+                       Background="Transparent"
+                       FontSize="15"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       HorizontalAlignment="Left"/>
+
+            <TextBox x:Name="txtWager"
+                     Text="{Binding Wager, UpdateSourceTrigger=PropertyChanged}"
+                     Foreground="White"
+                     FontSize="15"
+                     FontWeight="Medium"
+                     FontFamily="Montserrat"
+                     Background="Transparent"
+                     CaretBrush="LightGray"
+                     BorderBrush="DarkGray"
+                     BorderThickness="0,0,0,1"
+                     Height="28"
+                     VerticalAlignment="Center"
+                     Margin="0,5,0,5"
+                     Padding="20,0,0,0"/>
+            
+            <TextBlock Text="Description"
+                       Foreground="White"
+                       Background="Transparent"
+                       FontSize="15"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       HorizontalAlignment="Left"/>
+
+            <TextBox x:Name="txtDescription"
+                     Text="{Binding BetParameters, UpdateSourceTrigger=PropertyChanged}"
+                     Foreground="White"
+                     FontSize="15"
+                     FontWeight="Medium"
+                     FontFamily="Montserrat"
+                     Background="Transparent"
+                     CaretBrush="LightGray"
+                     BorderBrush="DarkGray"
+                     BorderThickness="0,0,0,1"
+                     Height="28"
+                     VerticalAlignment="Center"
+                     Margin="0,5,0,5"
+                     Padding="20,0,0,0"/>
+
+            <TextBlock Text="Winner"
+                       Foreground="White"
+                       Background="Transparent"
+                       FontSize="15"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"
+                       HorizontalAlignment="Left"/>
+
+            <TextBox x:Name="txtWinner"
+                     Text="{Binding Winner, UpdateSourceTrigger=PropertyChanged}"
+                     Foreground="White"
+                     FontSize="15"
+                     FontWeight="Medium"
+                     FontFamily="Montserrat"
+                     Background="Transparent"
+                     CaretBrush="LightGray"
+                     BorderBrush="DarkGray"
+                     BorderThickness="0,0,0,1"
+                     Height="28"
+                     VerticalAlignment="Center"
+                     Margin="0,5,0,5"
+                     Padding="20,0,0,0"/>
+
+            <RadioButton Style="{StaticResource betViewMenuButton}"
+             Tag="{StaticResource color3}"
+             Command="{Binding NewBetCommand}">
+
+                <StackPanel Orientation="Horizontal">
+                    <fonta:IconImage Icon="CircleCheck" Style="{StaticResource betViewMenuButtonIcon}"/>
+                    <TextBlock Text="Add Bet" Style="{StaticResource betViewMenuButtonText}"/>
+                </StackPanel>
+
+            </RadioButton>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -27,24 +27,24 @@ namespace BevBuddyApp_v1._2_.ViewModels
         public IconChar Icon { get => _icon; set { _icon = value; OnPropertyChanged(nameof(Icon)); } }
 
         public ICommand ShowHomeViewCommand { get; }
-        public ICommand ShowCustomerViewCommand { get; }
+        public ICommand ShowBetViewCommand { get; }
 
         public MainViewModel() 
         {
             CurrentUserAccount = new UserAccountModel();
 
             ShowHomeViewCommand = new ViewModelCommand(ExecuteShowHomeViewCommand);
-            ShowCustomerViewCommand = new ViewModelCommand(ExecuteShowCustomerViewCommand);
+            ShowBetViewCommand = new ViewModelCommand(ExecuteShowBetViewCommand);
 
             ExecuteShowHomeViewCommand(null);
 
             LoadCurrentUserData();
         }
 
-        private void ExecuteShowCustomerViewCommand(object obj)
+        private void ExecuteShowBetViewCommand(object obj)
         {
-            //CurrentChildView = new CustomerViewModel(); //Needs changed
-            Caption = "Customers";
+            CurrentChildView = new BetViewModel();
+            Caption = "Bets";
             Icon = IconChar.UserGroup;
         }
 

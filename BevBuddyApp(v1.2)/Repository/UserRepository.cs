@@ -17,13 +17,13 @@ using Microsoft.Identity.Client;
 
 namespace BevBuddyApp_v1._2_.Repository
 {
-    public class UserRepository : RepositoryBase, IUserRepository, IRepositoryStoredProcedures
+    public class UserRepository : RepositoryBase, IUserRepository, IAccountsRepositoryStoredProcedures
     {
-        private readonly RepositoryStoredProcedures _procedures;
+        private readonly AccountsRepositoryStoredProcedures _procedures;
 
         public UserRepository()
         {
-            _procedures = new RepositoryStoredProcedures();
+            _procedures = new AccountsRepositoryStoredProcedures();
         }
 
         public bool AuthenticateUser(NetworkCredential credential)
