@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BevBuddy_v1._2_.Services
 {
-    public interface IAccount
+    internal interface IAccount
     {
         int AccountID { get; }
         string FirstName { get; }

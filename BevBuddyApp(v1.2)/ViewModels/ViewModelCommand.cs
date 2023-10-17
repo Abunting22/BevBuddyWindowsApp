@@ -27,13 +27,14 @@ namespace BevBuddyApp_v1._2_.ViewModels
         public event EventHandler CanExecuteChanged
         {
             add { CommandManager.RequerySuggested += value; }
-            remove { CommandManager.RequerySuggested -= value; } 
+            remove { CommandManager.RequerySuggested -= value; }
         }
 
         public bool CanExecute(object parameter)
         {
             return _canExecuteAction == null ? true : _canExecuteAction(parameter);
         }
+
 
         public void Execute(object parameter) 
         {

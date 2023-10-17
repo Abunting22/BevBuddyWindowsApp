@@ -24,7 +24,7 @@ namespace BevBuddyApp_v1._2_.ViewModels
         private string _errorMessage;
         private bool _isViewVisible = true;
 
-        private readonly IUserRepository userRepository;
+        private readonly IUserRepository _userRepository = new UserRepository();
 
         public string Username { get => _username; set { _username = value; OnPropertyChanged(nameof(Username)); } }
         public SecureString Password { get => _password; set { _password = value; OnPropertyChanged(nameof(Password)); } }
@@ -36,16 +36,18 @@ namespace BevBuddyApp_v1._2_.ViewModels
         public ICommand RecoverPasswordCommand { get; }
         public ICommand ShowPasswordCommand { get; }
         public ICommand RememberPasswordCommand { get; }
-
+        
+        public LoginViewModel(IUserRepository userRepository)
+        {
+            _userRepository = userRepository;
+        }
 
         public LoginViewModel()
         {
-            userRepository = new UserRepository();
             LoginCommand = new ViewModelCommand(ExecuteLoginCommmand, CanExecuteLoginCommand);
             ShowCreateUserViewCommand = new ViewModelCommand(CreateUserViewCommand);
-            RecoverPasswordCommand = new ViewModelCommand(p => ExecuteRecoverPasswordCommand("", ""));
         }
-        
+
         private bool CanExecuteLoginCommand(object obj)
         {
             bool validData;
@@ -62,7 +64,7 @@ namespace BevBuddyApp_v1._2_.ViewModels
 
         private void ExecuteLoginCommmand(object obj)
         {
-            var isValidUser = userRepository.AuthenticateUser(new System.Net.NetworkCredential(Username, Password));
+            var isValidUser = _userRepository.AuthenticateUser(new System.Net.NetworkCredential(Username, Password));
             if (isValidUser) 
             {
                 Thread.CurrentPrincipal = new GenericPrincipal(
@@ -75,10 +77,10 @@ namespace BevBuddyApp_v1._2_.ViewModels
             }
         }
         
-        private void ExecuteRecoverPasswordCommand(string username, string email)
-        {
-            throw new NotImplementedException();
-        }
+        //private void ExecuteRecoverPasswordCommand(string username, string email)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         private void CreateUserViewCommand(object obj)
         {

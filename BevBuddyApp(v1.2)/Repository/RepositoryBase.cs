@@ -10,20 +10,19 @@ using System.Net;
 
 namespace BevBuddyApp_v1._2_.Repository
 {
-    public abstract class RepositoryBase : IRepositoryBase
+    public abstract class RepositoryBase
     {
         private string _connectionString;
 
         public RepositoryBase()
         {
-            _connectionString = ConnectionString();
+            ConnectionString();
         }
 
-        public string ConnectionString()
+        private void ConnectionString()
         {
             var connectionString = "Data Source=DESKTOP-4OBEQSQ;Initial Catalog=BevBuddyApp(v1.0);Integrated Security=True;Encrypt=False"; //Temporary - Need better long-term solution
             _connectionString = connectionString;
-            return _connectionString;
         }
 
         public SqlConnection GetConnection()
